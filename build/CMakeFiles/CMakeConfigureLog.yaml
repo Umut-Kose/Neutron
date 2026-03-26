@@ -1,0 +1,667 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Darwin - 24.6.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /opt/homebrew/opt/llvm/bin/clang 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /opt/homebrew/opt/llvm/bin/clang++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e23d1/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e23d1.dir/build.make CMakeFiles/cmTC_e23d1.dir/build
+        Building C object CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -c /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Homebrew clang version 19.1.7
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin
+        Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg
+        System configuration file directory: /opt/homebrew/etc/clang
+        User configuration file directory: /Users/ukose/.config/clang
+        clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+         (in-process)
+         "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-19" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=15.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN -resource-dir /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19 -dependency-file CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -x c /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target arm64-apple-darwin24.6.0
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include"
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking C executable cmTC_e23d1
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e23d1.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib -v -Wl,-v CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -o cmTC_e23d1 
+        Homebrew clang version 19.1.7
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin
+        Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg
+        System configuration file directory: /opt/homebrew/etc/clang
+        User configuration file directory: /Users/ukose/.config/clang
+         "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/19.1.7/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_e23d1 -L/opt/homebrew/opt/llvm/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -lSystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld  PROJECT:ld64-530
+        BUILD 07:38:32 Sep  7 2022
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+        Library search paths:
+        	/opt/homebrew/opt/llvm/lib
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib
+        Framework search paths:
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include]
+          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+        end of search list found
+        collapse include dir [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include] ==> [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include]
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+        implicit include dirs: [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN']
+        ignore line: []
+        ignore line: [Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e23d1/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e23d1.dir/build.make CMakeFiles/cmTC_e23d1.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/opt/homebrew/opt/llvm/bin/clang   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -c /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Homebrew clang version 19.1.7]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin]
+        ignore line: [Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg]
+        ignore line: [System configuration file directory: /opt/homebrew/etc/clang]
+        ignore line: [User configuration file directory: /Users/ukose/.config/clang]
+        ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ (in-process)]
+        ignore line: [ "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-19" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=15.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-ri8pQN -resource-dir /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19 -dependency-file CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -x c /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target arm64-apple-darwin24.6.0]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_e23d1]
+        ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e23d1.dir/link.txt --verbose=1]
+        ignore line: [/opt/homebrew/opt/llvm/bin/clang  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib -v -Wl -v CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -o cmTC_e23d1 ]
+        ignore line: [Homebrew clang version 19.1.7]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin]
+        ignore line: [Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg]
+        ignore line: [System configuration file directory: /opt/homebrew/etc/clang]
+        ignore line: [User configuration file directory: /Users/ukose/.config/clang]
+        link line: [ "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/19.1.7/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_e23d1 -L/opt/homebrew/opt/llvm/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o -lSystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a]
+          arg [/opt/anaconda3/bin/ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/opt/homebrew/Cellar/llvm/19.1.7/lib/libLTO.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [15.2] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_e23d1] ==> ignore
+          arg [-L/opt/homebrew/opt/llvm/lib] ==> dir [/opt/homebrew/opt/llvm/lib]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_e23d1.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lSystem] ==> lib [System]
+          arg [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a] ==> lib [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a]
+        Library search paths: [;/opt/homebrew/opt/llvm/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib]
+        Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/]
+        remove lib [System]
+        remove lib [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/opt/homebrew/opt/llvm/lib] ==> [/opt/homebrew/opt/llvm/lib]
+        collapse library dir [/opt/homebrew/opt/llvm/lib] ==> [/opt/homebrew/opt/llvm/lib]
+        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib]
+        collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/opt/homebrew/opt/llvm/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib]
+        implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4c0bc/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_4c0bc.dir/build.make CMakeFiles/cmTC_4c0bc.dir/build
+        Building CXX object CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/homebrew/opt/llvm/bin/clang++   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Homebrew clang version 19.1.7
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin
+        Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg
+        System configuration file directory: /opt/homebrew/etc/clang
+        User configuration file directory: /Users/ukose/.config/clang
+        clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+         (in-process)
+         "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-19" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=15.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si -resource-dir /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19 -dependency-file CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -internal-isystem /opt/homebrew/Cellar/llvm/19.1.7/bin/../include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target arm64-apple-darwin24.6.0
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include"
+        ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/homebrew/Cellar/llvm/19.1.7/bin/../include/c++/v1
+         /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include
+         /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking CXX executable cmTC_4c0bc
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c0bc.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib -v -Wl,-v CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4c0bc 
+        Homebrew clang version 19.1.7
+        Target: arm64-apple-darwin24.6.0
+        Thread model: posix
+        InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin
+        Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg
+        System configuration file directory: /opt/homebrew/etc/clang
+        User configuration file directory: /Users/ukose/.config/clang
+         "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/19.1.7/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_4c0bc -L/opt/homebrew/opt/llvm/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld  PROJECT:ld64-530
+        BUILD 07:38:32 Sep  7 2022
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+        Library search paths:
+        	/opt/homebrew/opt/llvm/lib
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib
+        Framework search paths:
+        	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/homebrew/Cellar/llvm/19.1.7/bin/../include/c++/v1]
+          add: [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include]
+          add: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+        end of search list found
+        collapse include dir [/opt/homebrew/Cellar/llvm/19.1.7/bin/../include/c++/v1] ==> [/opt/homebrew/Cellar/llvm/19.1.7/include/c++/v1]
+        collapse include dir [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include] ==> [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include]
+        collapse include dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+        implicit include dirs: [/opt/homebrew/Cellar/llvm/19.1.7/include/c++/v1;/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si']
+        ignore line: []
+        ignore line: [Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4c0bc/fast]
+        ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_4c0bc.dir/build.make CMakeFiles/cmTC_4c0bc.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/homebrew/opt/llvm/bin/clang++   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Homebrew clang version 19.1.7]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin]
+        ignore line: [Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg]
+        ignore line: [System configuration file directory: /opt/homebrew/etc/clang]
+        ignore line: [User configuration file directory: /Users/ukose/.config/clang]
+        ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+        ignore line: [ (in-process)]
+        ignore line: [ "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-19" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -funwind-tables=1 -target-sdk-version=15.2 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.4a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-gr51si -resource-dir /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19 -dependency-file CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -internal-isystem /opt/homebrew/Cellar/llvm/19.1.7/bin/../include/c++/v1 -internal-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include -internal-isystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include -internal-externc-isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target arm64-apple-darwin24.6.0]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/homebrew/Cellar/llvm/19.1.7/bin/../include/c++/v1]
+        ignore line: [ /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include]
+        ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_4c0bc]
+        ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c0bc.dir/link.txt --verbose=1]
+        ignore line: [/opt/homebrew/opt/llvm/bin/clang++  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib -v -Wl -v CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4c0bc ]
+        ignore line: [Homebrew clang version 19.1.7]
+        ignore line: [Target: arm64-apple-darwin24.6.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /opt/homebrew/Cellar/llvm/19.1.7/bin]
+        ignore line: [Configuration file: /opt/homebrew/etc/clang/arm64-apple-darwin24.cfg]
+        ignore line: [System configuration file directory: /opt/homebrew/etc/clang]
+        ignore line: [User configuration file directory: /Users/ukose/.config/clang]
+        link line: [ "/opt/anaconda3/bin/ld" -demangle -lto_library /opt/homebrew/Cellar/llvm/19.1.7/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_4c0bc -L/opt/homebrew/opt/llvm/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a]
+          arg [/opt/anaconda3/bin/ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/opt/homebrew/Cellar/llvm/19.1.7/lib/libLTO.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [15.2] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_4c0bc] ==> ignore
+          arg [-L/opt/homebrew/opt/llvm/lib] ==> dir [/opt/homebrew/opt/llvm/lib]
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_4c0bc.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lc++] ==> lib [c++]
+          arg [-lSystem] ==> lib [System]
+          arg [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a] ==> lib [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a]
+        Library search paths: [;/opt/homebrew/opt/llvm/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib]
+        Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/]
+        remove lib [System]
+        remove lib [/opt/homebrew/Cellar/llvm/19.1.7/lib/clang/19/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/opt/homebrew/opt/llvm/lib] ==> [/opt/homebrew/opt/llvm/lib]
+        collapse library dir [/opt/homebrew/opt/llvm/lib] ==> [/opt/homebrew/opt/llvm/lib]
+        collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib]
+        collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks]
+        implicit libs: [c++]
+        implicit objs: []
+        implicit dirs: [/opt/homebrew/opt/llvm/lib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/lib]
+        implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/PTL/PTLConfig.cmake:56 (find_dependency)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Geant4Config.cmake:286 (find_dependency)"
+      - "CMakeLists.txt:6 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-rrD8Zu"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-rrD8Zu"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-rrD8Zu'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_671db/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_671db.dir/build.make CMakeFiles/cmTC_671db.dir/build
+        Building C object CMakeFiles/cmTC_671db.dir/src.c.o
+        /opt/homebrew/opt/llvm/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_671db.dir/src.c.o -MF CMakeFiles/cmTC_671db.dir/src.c.o.d -o CMakeFiles/cmTC_671db.dir/src.c.o -c /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-rrD8Zu/src.c
+        Linking C executable cmTC_671db
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_671db.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib  CMakeFiles/cmTC_671db.dir/src.c.o -o cmTC_671db 
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindX11.cmake:682 (check_library_exists)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Geant4Config.cmake:384 (find_dependency)"
+      - "CMakeLists.txt:6 (find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /opt/homebrew/lib/libX11.dylib;/opt/homebrew/lib/libXext.dylib"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-9KW3ig"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-9KW3ig"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-9KW3ig'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b1eb9/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b1eb9.dir/build.make CMakeFiles/cmTC_b1eb9.dir/build
+        Building C object CMakeFiles/cmTC_b1eb9.dir/CheckFunctionExists.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_b1eb9.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_b1eb9.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_b1eb9.dir/CheckFunctionExists.c.o -c /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-9KW3ig/CheckFunctionExists.c
+        Linking C executable cmTC_b1eb9
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1eb9.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib  CMakeFiles/cmTC_b1eb9.dir/CheckFunctionExists.c.o -o cmTC_b1eb9   -L/opt/homebrew/lib  -Wl,-rpath,/opt/homebrew/lib /opt/homebrew/lib/libX11.dylib /opt/homebrew/lib/libXext.dylib 
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindX11.cmake:697 (check_function_exists)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Geant4Config.cmake:384 (find_dependency)"
+      - "CMakeLists.txt:6 (find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2XNUn3"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2XNUn3"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2XNUn3'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_303de/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_303de.dir/build.make CMakeFiles/cmTC_303de.dir/build
+        Building C object CMakeFiles/cmTC_303de.dir/CheckFunctionExists.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -DCHECK_FUNCTION_EXISTS=gethostbyname -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_303de.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_303de.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_303de.dir/CheckFunctionExists.c.o -c /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2XNUn3/CheckFunctionExists.c
+        Linking C executable cmTC_303de
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_303de.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -DCHECK_FUNCTION_EXISTS=gethostbyname -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib  CMakeFiles/cmTC_303de.dir/CheckFunctionExists.c.o -o cmTC_303de 
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindX11.cmake:711 (check_function_exists)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Geant4Config.cmake:384 (find_dependency)"
+      - "CMakeLists.txt:6 (find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-Wy75sH"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-Wy75sH"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-Wy75sH'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_29969/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_29969.dir/build.make CMakeFiles/cmTC_29969.dir/build
+        Building C object CMakeFiles/cmTC_29969.dir/CheckFunctionExists.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -DCHECK_FUNCTION_EXISTS=connect -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_29969.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_29969.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_29969.dir/CheckFunctionExists.c.o -c /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-Wy75sH/CheckFunctionExists.c
+        Linking C executable cmTC_29969
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29969.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -DCHECK_FUNCTION_EXISTS=connect -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib  CMakeFiles/cmTC_29969.dir/CheckFunctionExists.c.o -o cmTC_29969 
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindX11.cmake:720 (check_function_exists)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Geant4Config.cmake:384 (find_dependency)"
+      - "CMakeLists.txt:6 (find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-GMcMMJ"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-GMcMMJ"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-GMcMMJ'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5a3c0/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_5a3c0.dir/build.make CMakeFiles/cmTC_5a3c0.dir/build
+        Building C object CMakeFiles/cmTC_5a3c0.dir/CheckFunctionExists.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -DCHECK_FUNCTION_EXISTS=remove -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_5a3c0.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_5a3c0.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_5a3c0.dir/CheckFunctionExists.c.o -c /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-GMcMMJ/CheckFunctionExists.c
+        Linking C executable cmTC_5a3c0
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a3c0.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -DCHECK_FUNCTION_EXISTS=remove -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib  CMakeFiles/cmTC_5a3c0.dir/CheckFunctionExists.c.o -o cmTC_5a3c0 
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindX11.cmake:729 (check_function_exists)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Geant4Config.cmake:384 (find_dependency)"
+      - "CMakeLists.txt:6 (find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2xbFEF"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2xbFEF"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2xbFEF'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e1935/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e1935.dir/build.make CMakeFiles/cmTC_e1935.dir/build
+        Building C object CMakeFiles/cmTC_e1935.dir/CheckFunctionExists.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -DCHECK_FUNCTION_EXISTS=shmat -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_e1935.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_e1935.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_e1935.dir/CheckFunctionExists.c.o -c /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-2xbFEF/CheckFunctionExists.c
+        Linking C executable cmTC_e1935
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1935.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -DCHECK_FUNCTION_EXISTS=shmat -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib  CMakeFiles/cmTC_e1935.dir/CheckFunctionExists.c.o -o cmTC_e1935 
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/FindX11.cmake:739 (check_library_exists)"
+      - "/Applications/CMake.app/Contents/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Geant4Config.cmake:384 (find_dependency)"
+      - "CMakeLists.txt:6 (find_package)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-jpApSD"
+      binary: "/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-jpApSD"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/opt/homebrew/Cellar/llvm/19.1.7/bin/clang-scan-deps"
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/Users/ukose/sw/kits/geant4-v11.2.1-install_macfix/lib/cmake/Geant4/Modules"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-jpApSD'
+        
+        Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_248e5/fast
+        /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_248e5.dir/build.make CMakeFiles/cmTC_248e5.dir/build
+        Building C object CMakeFiles/cmTC_248e5.dir/CheckFunctionExists.c.o
+        /opt/homebrew/opt/llvm/bin/clang   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_248e5.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_248e5.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_248e5.dir/CheckFunctionExists.c.o -c /Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/CMakeScratch/TryCompile-jpApSD/CheckFunctionExists.c
+        Linking C executable cmTC_248e5
+        /Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_248e5.dir/link.txt --verbose=1
+        /opt/homebrew/opt/llvm/bin/clang  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/opt/llvm/lib  CMakeFiles/cmTC_248e5.dir/CheckFunctionExists.c.o -o cmTC_248e5   -L/opt/homebrew/lib  -Wl,-rpath,/opt/homebrew/lib -lICE 
+        ld: library not found for -lICE
+        clang: error: linker command failed with exit code 1 (use -v to see invocation)
+        make[1]: *** [cmTC_248e5] Error 1
+        make: *** [cmTC_248e5/fast] Error 2
+        
+      exitCode: 2
+...

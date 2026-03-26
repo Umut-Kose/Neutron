@@ -1,0 +1,14 @@
+/control/verbose 1
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+
+# Use a point source at the PMT window position
+/gps/pos/type Point
+/gps/pos/centre 0 0 -2.7 cm
+/gps/ang/type iso
+/gps/particle gamma
+/gps/ene/mono 661.657 keV
+
+/run/initialize
+/run/beamOn 100

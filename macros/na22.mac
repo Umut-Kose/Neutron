@@ -1,0 +1,16 @@
+# Na-22: positron emitter — we simulate 511 keV annihilation gamma
+/control/verbose 1
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+
+# GPS at PMT window
+/gps/pos/type Point
+/gps/pos/centre 0 0 -2.7 cm
+/gps/ang/type iso
+/gps/particle e+
+
+
+/run/initialize
+/run/beamOn 10000
+

@@ -1,0 +1,3 @@
+/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/BoratedScinNeutron.dir
+/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/edit_cache.dir
+/Users/ukose/sw/Work/Neutron3D/G4Sim/build/CMakeFiles/rebuild_cache.dir
