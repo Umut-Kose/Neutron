@@ -1,22 +1,18 @@
-#pragma once
-#include <G4UserSteppingAction.hh>
+#ifndef SteppingAction_h
+#define SteppingAction_h 1
 
-class EventAction;
-class DetectorConstruction;
-class G4Step;
-class G4LogicalVolume;
+#include "G4UserSteppingAction.hh"
+#include "EventAction.hh"
 
 class SteppingAction : public G4UserSteppingAction {
 public:
-  SteppingAction(EventAction* evt, const DetectorConstruction* det);
-  ~SteppingAction() override = default;
+    SteppingAction(EventAction* eventAction);
+    virtual ~SteppingAction();
 
-  void UserSteppingAction(const G4Step* step) override;
+    virtual void UserSteppingAction(const G4Step*);
 
 private:
-  EventAction* fEvent = nullptr;
-    const DetectorConstruction* fDetector = nullptr;  // ✅ Add this line
-  const G4LogicalVolume* fScintLV = nullptr;
-
-  const double fBirks_cm_per_MeV = 0.0125; // typical for PVT
+    EventAction* fEventAction;
 };
+
+#endif

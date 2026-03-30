@@ -1,11 +1,15 @@
-#pragma once
-#include <G4VUserActionInitialization.hh>
+#ifndef ActionInitialization_h
+#define ActionInitialization_h
 
-class ActionInitialization : public G4VUserActionInitialization {
+#include "G4VUserActionInitialization.hh"
+
+class ActionInitialization : public G4VUserActionInitialization
+{
 public:
-  ActionInitialization();
-  virtual ~ActionInitialization();
+    ActionInitialization();
+    virtual ~ActionInitialization();
 
-  virtual void Build() const override;
-  virtual void BuildForMaster() const override;
+    virtual void Build() const;
 };
+
+#endif

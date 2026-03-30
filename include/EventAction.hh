@@ -1,30 +1,36 @@
-#pragma once
-#include <G4UserEventAction.hh>
-class RunAction;
-class G4Event;
+#ifndef EventAction_h
+#define EventAction_h 1
 
+#include "G4UserEventAction.hh"
+#include "globals.hh"
+#include <fstream>
+#include <vector>
+
+class G4Run;
 
 class EventAction : public G4UserEventAction {
 public:
-explicit EventAction(RunAction* runAction);
-~EventAction() override = default;
-void BeginOfEventAction(const G4Event*) override;
-void EndOfEventAction(const G4Event*) override;
+    EventAction();
+    virtual ~EventAction();
 
+    virtual void BeginOfEventAction(const G4Event*);
+    virtual void EndOfEventAction(const G4Event*);
 
-// Accumulators called from SteppingAction
-void AddEdep(double e) { fEdep += e; }
-void AddEdepQuenched(double e) { fEdepQuenched += e; }
- void AddLightYield(double n) { fLightYield += n; }
- double GetLightYield() const { return fLightYield; }
- void AddProducedPhotons(double n) { fProducedPhotons += n; }
- double GetProducedPhotons() const { return fProducedPhotons; }
+    // Write outgoing neutron energies at end of run
+    void WriteOutgoingNeutrons(const G4Run* run);
 
+    void SetCaptureFlag() { fCapture = true; }
+    void AddGammaEdep(G4double e) { fGammaEdep += e; }
+    void AddOutgoingNeutronEnergy(G4double e) { fOutgoingEnergies.push_back(e); }
+
+    // run-level collection of outgoing neutron energies (MeV)
+    static std::vector<G4double> fOutgoingEnergies;
 
 private:
-RunAction* fRunAction = nullptr;
-double fEdep = 0.0; // MeV
-double fEdepQuenched = 0.0; // MeVee approximation
- double fLightYield = 0.0; // estimated detected photons
- double fProducedPhotons = 0.0; // produced photons in scintillator
+    bool fCapture;
+    G4double fGammaEdep;
+
+    static std::ofstream fOut;
 };
+
+#endif

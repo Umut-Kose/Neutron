@@ -1,0 +1,26 @@
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.32.12                        https://root.cern |
+  | (c) 1995-2024, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for macosxarm64 on May 29 2025, 13:59:54                   |
+  | From tags/v6-32-12@v6-32-12                                      |
+  | With Apple clang version 16.0.0 (clang-1600.0.26.6)              |
+  | Try '.help'/'.?', '.demo', '.license', '.credits', '.quit'/'.q'  |
+   ------------------------------------------------------------------
+
+
+Processing /Users/ukose/sw/Work/Neutron3D/Simulation/G4Sim/save_gdml_snapshot_repo.C...
+Info in <TGeoManager::Import>: Reading geometry from file: geometry_output.gdml
+Info in <TGeoManager::TGeoManager>: Geometry GDMLImport, Geometry imported from GDML created
+Info in <TGeoManager::SetTopVolume>: Top volume is World. Master volume is World
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 1, max placements = 4
+Info in <TGeoManager::CloseGeometry>: 5 nodes/ 5 volume UID's in Geometry imported from GDML
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+Info in <TGeoManager::SetVisLevel>: Automatic visible depth disabled
+Info in <TCanvas::Print>: png file /Users/ukose/sw/Work/Neutron3D/Simulation/G4Sim/opengl_snapshot_root.png has been created
+Wrote /Users/ukose/sw/Work/Neutron3D/Simulation/G4Sim/opengl_snapshot_root.png

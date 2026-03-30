@@ -1,0 +1,14 @@
+# export_geometry.mac
+# Macro to write GDML geometry and produce a short visualization snapshot
+/control/verbose 1
+/run/verbose 1
+/geometry/gdml/write geometry_output.gdml
+# Optionally produce a screenshot (depends on vis system)
+/vis/scene/create
+/vis/scene/add/trajectories smooth
+/vis/open OGL 600x600-0+0
+/vis/sceneHandler/create OGLSH
+/vis/viewer/set/viewpointThetaPhi 90 0
+/vis/viewer/refresh
+# finish
+/control/exit

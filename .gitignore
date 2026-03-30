@@ -1,0 +1,21 @@
+cmake_install.cmake
+Makefile
+
+# MacOS
+.DS_Store
+
+# Binaries
+*.o
+*.out
+*.a
+
+# ROOT / outputs
+#*.root
+#*.png
+#*.pdf
+#*.csv
+#*.log
+
+# Temporary / analysis
+backups/
+old/

@@ -1,0 +1,58 @@
+# AmBe neutron energy (MeV) and normalized relative yield
+# Sourced from: https://github.com/samdejong86/PileRoomSim/blob/master/one.mac
+# Reformatted: each line is `/gps/hist/point <E(MeV)> <weight>` with weights normalized to sum=1
+
+/gps/hist/type energy
+/gps/hist/point 0.11 0.003530204681
+/gps/hist/point 0.33 0.003312148117
+/gps/hist/point 0.54 0.002973180588
+/gps/hist/point 0.75 0.002646939020
+/gps/hist/point 0.97 0.002268210052
+/gps/hist/point 1.18 0.002097458989
+/gps/hist/point 1.40 0.001854911504
+/gps/hist/point 1.61 0.002038347150
+/gps/hist/point 1.82 0.002368020125
+/gps/hist/point 2.04 0.002283266971
+/gps/hist/point 2.25 0.002386274204
+/gps/hist/point 2.47 0.002419569080
+/gps/hist/point 2.68 0.003129251744
+/gps/hist/point 2.90 0.003775136093
+/gps/hist/point 3.11 0.003911840764
+/gps/hist/point 3.32 0.003665135043
+/gps/hist/point 3.54 0.003250690676
+/gps/hist/point 3.75 0.003175604475
+/gps/hist/point 3.97 0.002853156484
+/gps/hist/point 4.18 0.003032662250
+/gps/hist/point 4.39 0.003373111683
+/gps/hist/point 4.61 0.003250690676
+/gps/hist/point 4.82 0.003524978651
+/gps/hist/point 5.04 0.003216138751
+/gps/hist/point 5.25 0.002900627937
+/gps/hist/point 5.47 0.002465695899
+/gps/hist/point 5.68 0.002178490865
+/gps/hist/point 5.89 0.001924523112
+/gps/hist/point 6.11 0.001870721786
+/gps/hist/point 6.32 0.002154493106
+/gps/hist/point 6.54 0.001930796721
+/gps/hist/point 6.75 0.001718804263
+/gps/hist/point 6.96 0.001771947206
+/gps/hist/point 7.18 0.001771947206
+/gps/hist/point 7.39 0.001981083571
+/gps/hist/point 7.61 0.001938143203
+/gps/hist/point 7.82 0.001782581322
+/gps/hist/point 8.03 0.001520760132
+/gps/hist/point 8.25 0.001022422214
+/gps/hist/point 8.46 0.000688966965
+/gps/hist/point 8.68 0.000449770735
+/gps/hist/point 8.89 0.000387569016
+/gps/hist/point 9.11 0.000402353861
+/gps/hist/point 9.32 0.000535166861
+/gps/hist/point 9.53 0.000660727054
+/gps/hist/point 9.75 0.000583836954
+/gps/hist/point 9.96 0.000495175242
+/gps/hist/point 10.2 0.000391621999
+/gps/hist/point 10.4 0.000293858291
+/gps/hist/point 10.6 0.000159408549
+/gps/hist/point 10.8 3.83018487e-05
+
+# End of AmBe points (normalized)

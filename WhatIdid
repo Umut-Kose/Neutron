@@ -1,0 +1,25 @@
+# show start / end
+head -n 30 ambe_points.mac
+tail -n 30 ambe_points.mac
+
+# count how many /gps/hist/point lines
+grep -E '/gps/hist/point' ambe_points.mac | wc -l
+
+# create a clean two-column file (energy, weight)
+grep '/gps/hist/point' ambe_points.mac | \
+  awk '{ e=$3; w=$4; gsub(/[^0-9eE+-.]/,"",e); gsub(/[^0-9eE+-.]/,"",w); print e, w }' > /tmp/ambe_points.txt
+
+# summary: points, sum(weights), min energy, max energy
+awk '{sum+=$2; if(NR==1||$1<min) min=$1; if(NR==1||$1>max) max=$1} END{printf "points=%d sum_weights=%.12g min=%g max=%g\n", NR, sum, min, max}' /tmp/ambe_points.txt
+
+
+
+
+# show first/last lines
+head -n 40 ambe_points.mac
+tail -n 40 ambe_points.mac
+
+# show the parsed energy+weight columns the GPS macro contains
+grep '/gps/hist/point' ambe_points.mac | nl -v0 -ba
+grep '/gps/hist/point' ambe_points.mac | awk '{print NR, $0; print "-> E="$3, "W="$4}'
+

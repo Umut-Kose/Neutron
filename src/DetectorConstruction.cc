@@ -1,81 +1,150 @@
 #include "DetectorConstruction.hh"
+#include "G4Material.hh"
+#include "G4NistManager.hh"
+#include "G4Box.hh"
+#include "G4LogicalVolume.hh"
+#include "G4PVPlacement.hh"
+#include "G4SystemOfUnits.hh"
+#include "G4PhysicalConstants.hh"
 
+#include "NaISD.hh"
+#include "BPlasticSD.hh"
+#include "G4SDManager.hh"
 
-#include <G4Box.hh>
-#include <G4LogicalVolume.hh>
-#include <G4NistManager.hh>
-#include <G4PVPlacement.hh>
-#include <G4SubtractionSolid.hh>
-#include <G4SystemOfUnits.hh>
-#include <G4Material.hh>
-#include <G4Element.hh>
-#include <G4ThreeVector.hh>
+#include "G4VisAttributes.hh"
+#include "G4Colour.hh"
+// GDML writer
+#include "G4GDMLParser.hh"
 
+// prototype for helper
+static void writeGDML(G4VPhysicalVolume* world);
 
-DetectorConstruction::DetectorConstruction() : G4VUserDetectorConstruction() {}
-
-
-void DetectorConstruction::DefineMaterials() {
-auto* nist = G4NistManager::Instance();
-nist->FindOrBuildMaterial("G4_AIR");
-nist->FindOrBuildMaterial("G4_POLYETHYLENE");
-nist->FindOrBuildMaterial("G4_Pyrex_Glass");
-
-
-// Elements
-auto* elH = new G4Element("Hydrogen","H", 1., 1.00794*g/mole);
-auto* elC = new G4Element("Carbon", "C", 6., 12.011*g/mole);
-// Natural boron (≈19.9% B-10, 80.1% B-11)
-auto* elB10= new G4Isotope("B10", 5,10, 10.0129*g/mole);
-auto* elB11= new G4Isotope("B11", 5,11, 11.0093*g/mole);
-auto* elBnat= new G4Element("Boron","B", 2);
-elBnat->AddIsotope(elB10, 19.9*perCent);
-elBnat->AddIsotope(elB11, 80.1*perCent);
-
-
-// Approximate EJ-254 as PVT (C,H) with 5% natural B by mass
-auto* EJ254 = new G4Material("EJ254_5B", 1.026*g/cm3, 3);
-EJ254->AddElement(elC, 0.878); // mass fractions (approx)
-EJ254->AddElement(elH, 0.072);
-EJ254->AddElement(elBnat, 0.050); // 5% B by mass
+DetectorConstruction::DetectorConstruction() : 
+    fHDPE(nullptr),
+    fBPlastic(nullptr),
+    fNaI(nullptr),
+    fWorldMaterial(nullptr),
+    fLogicNaI(nullptr),
+    fLogicScint(nullptr)
+{
+    DefineMaterials();
 }
 
+DetectorConstruction::~DetectorConstruction() {}
+
+void DetectorConstruction::DefineMaterials() {
+    auto nist = G4NistManager::Instance();
+
+    // World material
+    fWorldMaterial = nist->FindOrBuildMaterial("G4_AIR");
+
+    // HDPE: approx density 0.95 g/cm3
+    auto H = nist->FindOrBuildElement("H");
+    auto C = nist->FindOrBuildElement("C");
+    fHDPE = new G4Material("HDPE", 0.95*g/cm3, 2);
+    fHDPE->AddElement(C, 2);
+    fHDPE->AddElement(H, 4);
+
+    // Boron-loaded plastic (simplified: 5% B by mass)
+    auto B = nist->FindOrBuildElement("B");
+    fBPlastic = new G4Material("BPlastic", 1.02*g/cm3, 3);
+    fBPlastic->AddElement(C, 0.85);
+    fBPlastic->AddElement(H, 0.10);
+    fBPlastic->AddElement(B, 0.05);
+
+    // NaI
+    fNaI = nist->FindOrBuildMaterial("G4_SODIUM_IODIDE");
+}
 
 G4VPhysicalVolume* DetectorConstruction::Construct() {
-DefineMaterials();
-auto* nist = G4NistManager::Instance();
 
+    // World
+    auto solidWorld = new G4Box("World", 100*cm, 100*cm, 100*cm);
+    auto logicWorld = new G4LogicalVolume(solidWorld, fWorldMaterial, "World");
+    auto physWorld = new G4PVPlacement(nullptr, {}, logicWorld, "World", 0, false, 0);
 
-// World
-auto worldSize = 50*cm;
-auto* solidWorld = new G4Box("World", worldSize, worldSize, worldSize);
-auto* logicWorld = new G4LogicalVolume(solidWorld, nist->FindOrBuildMaterial("G4_AIR"), "World");
-auto* physWorld = new G4PVPlacement(nullptr, {}, logicWorld, "World", nullptr, false, 0);
+    // World visualization
+    G4VisAttributes* worldVis = new G4VisAttributes(G4Colour(1.0, 1.0, 1.0, 0.1));
+    worldVis->SetVisibility(true);
+    logicWorld->SetVisAttributes(worldVis);
 
+    // HDPE block (half-extent)
+    auto solidBlock = new G4Box("HDPE", 15*cm, 15*cm, 15*cm);
+    auto logicBlock = new G4LogicalVolume(solidBlock, fHDPE, "HDPE");
+    G4VisAttributes* hdpeVis = new G4VisAttributes(G4Colour(0.0, 1.0, 1.0, 0.3));
+    hdpeVis->SetForceSolid(true);
+    logicBlock->SetVisAttributes(hdpeVis);
+    new G4PVPlacement(nullptr, {}, logicBlock, "HDPE", logicWorld, false, 0);
 
-// Scintillator bar: 1x1x5 cm3 (half-lengths)
-auto* solidBar = new G4Box("ScintBar", 0.5*cm, 0.5*cm, 2.5*cm);
-fScintLV = new G4LogicalVolume(solidBar, G4Material::GetMaterial("EJ254_5B"), "ScintLV");
-new G4PVPlacement(nullptr, {}, fScintLV, "ScintBar", logicWorld, false, 0);
+    // Boron plastic scintillator (1x1x5 cm bar along z axis)
+    // The HDPE block half-extent is 15 cm; place the scintillator on +z side,
+    // with its 1x1 cm face facing the source and located 10 cm away from the HDPE surface.
+    // HDPE +z surface is at +15 cm from origin, so scintillator front face center at +25 cm.
+    // We model the scintillator as a box with half-extents 0.5 x 0.5 x 2.5 cm (length along z).
+    auto solidScint = new G4Box("Scint", 0.5*cm, 0.5*cm, 2.5*cm);
+    fLogicScint = new G4LogicalVolume(solidScint, fBPlastic, "Scint");
+    G4VisAttributes* scintVis = new G4VisAttributes(G4Colour(0.0, 0.0, 1.0, 0.5));
+    scintVis->SetForceSolid(true);
+    fLogicScint->SetVisAttributes(scintVis);
+    // position so that the front face (smaller z) is at +25 cm, center of box is at +25 - 2.5 cm = +22.5 cm
+    G4double scint_front_z = 15.0*cm + 10.0*cm; // 25 cm
+    G4double scint_center_z = scint_front_z - 2.5*cm;
+    G4ThreeVector posScint(0, 0, scint_center_z);
+    new G4PVPlacement(nullptr, posScint, fLogicScint, "Scint", logicWorld, false, 0);
 
+    // Small PMT coupling volume placed immediately behind (on +z side) of the scintillator
+    // Simple model: 1x1x1 cm cube, centered on scintillator backside.
+    auto solidPMT = new G4Box("PMT", 0.5*cm, 0.5*cm, 0.5*cm);
+    // Use vacuum/air for PMT placeholder
+    auto pmtMaterial = fWorldMaterial;
+    auto logicPMT = new G4LogicalVolume(solidPMT, pmtMaterial, "PMT");
+    G4VisAttributes* pmtVis = new G4VisAttributes(G4Colour(0.3,0.3,0.3,0.6));
+    pmtVis->SetForceSolid(true);
+    logicPMT->SetVisAttributes(pmtVis);
+    // scintillator back face center z is scint_center_z + 2.5 cm; place PMT center at back + 0.5 cm
+    G4double pmt_center_z = scint_center_z + 2.5*cm + 0.5*cm;
+    G4ThreeVector posPMT(0, 0, pmt_center_z);
+    new G4PVPlacement(nullptr, posPMT, logicPMT, "PMT", logicWorld, false, 0);
 
-// Black holder: 1 mm thick shell created by subtracting the scintillator solid
-// from a slightly larger outer box to avoid overlaps.
-auto* solidOuter = new G4Box("HolderOuter", 0.6*cm, 0.6*cm, 2.6*cm);
-// Use the existing scintillator solid (solidBar) as the inner subtraction shape so
-// the shell fits tightly around the bar with ~1 mm thickness.
-auto* solidShell = new G4SubtractionSolid("HolderShell", solidOuter, solidBar, 0, G4ThreeVector(0,0,0));
-auto* logicShell = new G4LogicalVolume(solidShell, nist->FindOrBuildMaterial("G4_POLYETHYLENE"), "HolderLV");
-new G4PVPlacement(nullptr, {}, logicShell, "Holder", logicWorld, false, 0);
+    // NaI detector (3x3x3 cm cube placed on +y side (top) of the Scintillator)
+    auto solidNaI = new G4Box("NaI", 1.5*cm, 1.5*cm, 1.5*cm);
+    fLogicNaI = new G4LogicalVolume(solidNaI, fNaI, "NaI");
+    G4VisAttributes* naiVis = new G4VisAttributes(G4Colour(1.0, 0.0, 0.0, 0.5));
+    naiVis->SetForceSolid(true);
+    fLogicNaI->SetVisAttributes(naiVis);
+    // Place NaI above (+y) the scintillator; scintillator center z = scint_center_z
+    // Put NaI center at y = 0.5 cm (scint half y) + 1.5 cm (NaI half y) + 1.0 cm gap = 3.0 cm
+    G4double nai_center_y = 0.5*cm + 1.5*cm + 1.0*cm; // 3.0 cm
+    G4ThreeVector posNaI(0, nai_center_y, scint_center_z);
+    new G4PVPlacement(nullptr, posNaI, fLogicNaI, "NaI", logicWorld, false, 0);
 
+    // (Source marker removed)
 
-// PMT window (1 mm) in front of -Z face (just for geometry completeness)
-auto* solidWin = new G4Box("PMTWin", 0.5*cm, 0.5*cm, 0.05*cm);
-auto* logicWin = new G4LogicalVolume(solidWin, nist->FindOrBuildMaterial("G4_Pyrex_Glass"), "PMTWinLV");
-G4ThreeVector pmtPos(0,0,-(2.5*cm + 0.05*cm));
-new G4PVPlacement(nullptr, pmtPos, logicWin, "PMTWin", logicWorld, false, 0);
-fPMTPos = pmtPos;
+    // attempt to write GDML file for inspection
+    writeGDML(physWorld);
 
+    return physWorld;
+}
 
-return physWorld;
+// write GDML helper (optional)
+void writeGDML(G4VPhysicalVolume* world) {
+    try {
+        // remove existing file if present to avoid G4GDML throwing
+        const char* gdml_name = "geometry_output.gdml";
+        std::remove(gdml_name);
+        G4GDMLParser parser;
+        parser.Write(gdml_name, world);
+    } catch(...) {
+        G4cout << "Warning: GDML write failed" << G4endl;
+    }
+}
+
+void DetectorConstruction::ConstructSDandField() {
+    G4SDManager* sdManager = G4SDManager::GetSDMpointer();
+    auto naiSD = new NaISD("NaISD");
+    auto bplasticSD = new BPlasticSD("BPlasticSD");
+    sdManager->AddNewDetector(naiSD);
+    sdManager->AddNewDetector(bplasticSD);
+    if (fLogicNaI) fLogicNaI->SetSensitiveDetector(naiSD);
+    if (fLogicScint) fLogicScint->SetSensitiveDetector(bplasticSD);
 }

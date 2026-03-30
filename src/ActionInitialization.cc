@@ -3,32 +3,21 @@
 #include "RunAction.hh"
 #include "EventAction.hh"
 #include "SteppingAction.hh"
-#include "DetectorConstruction.hh"
-#include <G4RunManager.hh>
 
+ActionInitialization::ActionInitialization()
+ : G4VUserActionInitialization()
+{}
 
-ActionInitialization::ActionInitialization() {}
-ActionInitialization::~ActionInitialization() {}
+ActionInitialization::~ActionInitialization()
+{}
 
-
-void ActionInitialization::Build() const {
-
-  auto* detector = static_cast<const DetectorConstruction*>(
-    G4RunManager::GetRunManager()->GetUserDetectorConstruction());
-
-  auto* runAction = new RunAction();
-  SetUserAction(runAction);
-  
-  auto* eventAction = new EventAction(runAction);
-  SetUserAction(eventAction);
-
-  auto* steppingAction = new SteppingAction(eventAction, detector);
-  SetUserAction(steppingAction);
-  
-  SetUserAction(new PrimaryGeneratorAction());
-}
-
-
-void ActionInitialization::BuildForMaster() const {
-  SetUserAction(new RunAction());
+void ActionInitialization::Build() const
+{
+    SetUserAction(new PrimaryGeneratorAction);
+    
+    auto eventAction = new EventAction;
+    SetUserAction(eventAction);
+    
+    SetUserAction(new RunAction);
+    SetUserAction(new SteppingAction(eventAction));
 }

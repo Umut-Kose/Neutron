@@ -1,0 +1,15 @@
+# export_dawn.mac
+/run/initialize
+/vis/verbose 1
+/vis/open DAWNFILE
+/vis/drawVolume
+/vis/viewer/set/viewpointThetaPhi 90 0
+/vis/scene/add/trajectories smooth
+/vis/scene/add/axes
+/vis/sceneHandler/create DAWNSH
+/vis/scene/add/hits
+/vis/scene/add/trajectories
+/vis/sceneHandler/attach
+/vis/flush
+/vis/viewer/refresh
+/control/exit

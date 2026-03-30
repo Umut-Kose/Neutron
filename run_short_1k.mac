@@ -1,0 +1,13 @@
+# run_short_1k.mac
+/run/initialize
+/control/macroPath ..
+/vis/disable
+/gps/particle neutron
+/gps/pos/type Point
+/gps/pos/centre 0. 0. 0. mm
+/gps/ene/type User
+/gps/hist/type energy
+/control/execute ambe_points.mac
+/gps/ang/type iso
+/run/beamOn 1000
+/run/beamOn 0

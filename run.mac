@@ -1,0 +1,41 @@
+# Initialize run
+/run/initialize
+
+# Visualization settings
+##/vis/open OGLSQt
+/vis/drawVolume
+/vis/viewer/set/viewpointVector 1 1 1
+/vis/viewer/set/autoRefresh true
+/vis/scene/add/trajectories smooth
+/vis/scene/add/scale 10 cm
+/vis/scene/add/axes
+
+# GPS source configuration
+/gps/particle neutron
+/gps/pos/type Point
+/gps/pos/centre 0. 0. 0. mm
+
+# Energy distribution - using AmBe spectrum
+# Set macro path so ambe_points.mac can be found when running from build dir
+/control/macroPath ..
+# Energy distribution - using AmBe spectrum
+/gps/ene/type User
+/gps/hist/type energy
+# Energy (MeV) Relative Probability
+/control/execute ambe_points.mac
+
+# Set angular distribution
+/gps/ang/type iso
+
+
+# to print the GPS histogram
+
+
+# Number of events to simulate
+/run/beamOn 50000
+
+# Gentle cleanup
+/vis/viewer/flush
+/vis/viewer/refresh
+/run/beamOn 0
+/vis/disable

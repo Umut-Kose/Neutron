@@ -1,0 +1,27 @@
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.36.000                       https://root.cern |
+  | (c) 1995-2025, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for macosxarm64 on May 25 2025, 16:03:44                   |
+  | From tags/6-36-000@6-36-000                                      |
+  | With Apple clang version 17.0.0 (clang-1700.0.13.3)              |
+  | Try '.help'/'.?', '.demo', '.license', '.credits', '.quit'/'.q'  |
+   ------------------------------------------------------------------
+
+
+Processing /Users/ukose/sw/Work/Neutron3D/Simulation/G4Sim/save_gdml_snapshot.C...
+Info in <TGeoManager::Import>: Reading geometry from file: geometry_output.gdml
+Info in <TGeoManager::TGeoManager>: Geometry GDMLImport, Geometry imported from GDML created
+Info in <TGeoManager::SetTopVolume>: Top volume is World. Master volume is World
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 1, max placements = 4
+Info in <TGeoManager::CloseGeometry>: 5 nodes/ 5 volume UID's in Geometry imported from GDML
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+Info in <TGeoManager::SetVisLevel>: Automatic visible depth disabled
+root.exe ERROR: cannot open image file "build/opengl_snapshot_root.png" for writing. Please check permissions.
+Error in <TASImage::WriteImage>: error writing file build/opengl_snapshot_root.png
+Wrote build/opengl_snapshot_root.png

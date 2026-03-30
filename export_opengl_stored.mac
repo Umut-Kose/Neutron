@@ -1,0 +1,14 @@
+# export_opengl_stored.mac - try to create an offscreen PNG using OpenGLStoredQt
+/run/initialize
+/vis/verbose 1
+# Open the OpenGL stored (offscreen) Qt driver
+/vis/open OGLSQt 800x600-0+0
+/vis/scene/create
+/vis/scene/add/axes
+/vis/scene/add/trajectories smooth
+/vis/drawVolume
+/vis/viewer/set/viewpointThetaPhi 70 20
+/vis/viewer/refresh
+# attempt to print the view to PNG (format may be auto-detected)
+/vis/viewer/print opengl_snapshot.png
+/control/exit

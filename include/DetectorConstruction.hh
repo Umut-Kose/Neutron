@@ -1,34 +1,34 @@
-#pragma once
-#include <G4VUserDetectorConstruction.hh>
-#include <globals.hh>
-#include <G4ThreeVector.hh>
+#ifndef DetectorConstruction_h
+#define DetectorConstruction_h 1
 
+#include "G4VUserDetectorConstruction.hh"
+#include "globals.hh"
 
 class G4LogicalVolume;
 class G4VPhysicalVolume;
-class G4Material;
 
+#include "G4VSensitiveDetector.hh"
+#include "G4VisAttributes.hh"
+#include "G4Colour.hh"
 
 class DetectorConstruction : public G4VUserDetectorConstruction {
 public:
-DetectorConstruction();
-~DetectorConstruction() override = default;
+    DetectorConstruction();
+    virtual ~DetectorConstruction();
 
-
-G4VPhysicalVolume* Construct() override;
-
-
-// Access to the scintillator logical volume (for stepping)
-G4LogicalVolume* GetScintLV() const { return fScintLV; }
-// PMT position in world coordinates
-G4ThreeVector GetPMTPosition() const { return fPMTPos; }
-
+    virtual G4VPhysicalVolume* Construct();
+    virtual void ConstructSDandField();
 
 private:
-void DefineMaterials();
+    void DefineMaterials();
+    
+    G4Material* fHDPE;
+    G4Material* fBPlastic;
+    G4Material* fNaI;
+    G4Material* fWorldMaterial;
 
-
-private:
-G4LogicalVolume* fScintLV = nullptr;
-G4ThreeVector fPMTPos{0,0,0};
+    G4LogicalVolume* fLogicNaI;
+    G4LogicalVolume* fLogicScint;
 };
+
+#endif

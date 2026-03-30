@@ -1,0 +1,9 @@
+/control/verbose 1
+/run/verbose 1
+/event/verbose 0
+/gps/clear
+/gps/hist/type energy
+/gps/source/number 1
+# use the ambe histogram macro
+/run/initialize
+/run/beamOn 1000

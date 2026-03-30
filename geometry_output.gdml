@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define/>
+
+  <materials>
+    <isotope N="12" Z="6" name="C120x142f255e0">
+      <atom unit="g/mole" value="12"/>
+    </isotope>
+    <isotope N="13" Z="6" name="C130x142f25620">
+      <atom unit="g/mole" value="13.0034"/>
+    </isotope>
+    <element name="C0x142f25660">
+      <fraction n="0.9893" ref="C120x142f255e0"/>
+      <fraction n="0.0107" ref="C130x142f25620"/>
+    </element>
+    <isotope N="1" Z="1" name="H10x142f269a0">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="H20x142f269e0">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="H0x142f26590">
+      <fraction n="0.999885" ref="H10x142f269a0"/>
+      <fraction n="0.000115" ref="H20x142f269e0"/>
+    </element>
+    <material name="HDPE0x142f26e50" state="solid">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="56.5182975271737"/>
+      <D unit="g/cm3" value="0.95"/>
+      <fraction n="0.856281712255198" ref="C0x142f25660"/>
+      <fraction n="0.143718287744802" ref="H0x142f26590"/>
+    </material>
+    <isotope N="10" Z="5" name="B100x142f273e0">
+      <atom unit="g/mole" value="10.0129"/>
+    </isotope>
+    <isotope N="11" Z="5" name="B110x142f270b0">
+      <atom unit="g/mole" value="11.0093"/>
+    </isotope>
+    <element name="B0x142f270f0">
+      <fraction n="0.199" ref="B100x142f273e0"/>
+      <fraction n="0.801" ref="B110x142f270b0"/>
+    </element>
+    <material name="BPlastic0x142f27740" state="solid">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="62.2176190764779"/>
+      <D unit="g/cm3" value="1.02"/>
+      <fraction n="0.85" ref="C0x142f25660"/>
+      <fraction n="0.1" ref="H0x142f26590"/>
+      <fraction n="0.05" ref="B0x142f270f0"/>
+    </material>
+    <isotope N="14" Z="7" name="N140x142f25840">
+      <atom unit="g/mole" value="14.0031"/>
+    </isotope>
+    <isotope N="15" Z="7" name="N150x142f258a0">
+      <atom unit="g/mole" value="15.0001"/>
+    </isotope>
+    <element name="N0x142f258f0">
+      <fraction n="0.99632" ref="N140x142f25840"/>
+      <fraction n="0.00368" ref="N150x142f258a0"/>
+    </element>
+    <isotope N="16" Z="8" name="O160x142f25aa0">
+      <atom unit="g/mole" value="15.9949"/>
+    </isotope>
+    <isotope N="17" Z="8" name="O170x142f25b20">
+      <atom unit="g/mole" value="16.9991"/>
+    </isotope>
+    <isotope N="18" Z="8" name="O180x142f25b60">
+      <atom unit="g/mole" value="17.9992"/>
+    </isotope>
+    <element name="O0x142f25ba0">
+      <fraction n="0.99757" ref="O160x142f25aa0"/>
+      <fraction n="0.00038" ref="O170x142f25b20"/>
+      <fraction n="0.00205" ref="O180x142f25b60"/>
+    </element>
+    <isotope N="36" Z="18" name="Ar360x142f25da0">
+      <atom unit="g/mole" value="35.9675"/>
+    </isotope>
+    <isotope N="38" Z="18" name="Ar380x142f25de0">
+      <atom unit="g/mole" value="37.9627"/>
+    </isotope>
+    <isotope N="40" Z="18" name="Ar400x142f25ae0">
+      <atom unit="g/mole" value="39.9624"/>
+    </isotope>
+    <element name="Ar0x142f25ec0">
+      <fraction n="0.003365" ref="Ar360x142f25da0"/>
+      <fraction n="0.000632" ref="Ar380x142f25de0"/>
+      <fraction n="0.996003" ref="Ar400x142f25ae0"/>
+    </element>
+    <material name="G4_AIR0x142f254d0" state="gas">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="85.7"/>
+      <D unit="g/cm3" value="0.00120479"/>
+      <fraction n="0.000124000124000124" ref="C0x142f25660"/>
+      <fraction n="0.755267755267755" ref="N0x142f258f0"/>
+      <fraction n="0.231781231781232" ref="O0x142f25ba0"/>
+      <fraction n="0.0128270128270128" ref="Ar0x142f25ec0"/>
+    </material>
+    <isotope N="23" Z="11" name="Na230x142f27e20">
+      <atom unit="g/mole" value="22.9898"/>
+    </isotope>
+    <element name="Na0x142f27a70">
+      <fraction n="1" ref="Na230x142f27e20"/>
+    </element>
+    <isotope N="127" Z="53" name="I1270x142f27b90">
+      <atom unit="g/mole" value="126.904"/>
+    </isotope>
+    <element name="I0x142f28380">
+      <fraction n="1" ref="I1270x142f27b90"/>
+    </element>
+    <material name="G4_SODIUM_IODIDE0x142f28190" state="solid">
+      <T unit="K" value="293.15"/>
+      <MEE unit="eV" value="452"/>
+      <D unit="g/cm3" value="3.667"/>
+      <fraction n="0.153373922070159" ref="Na0x142f27a70"/>
+      <fraction n="0.846626077929841" ref="I0x142f28380"/>
+    </material>
+  </materials>
+
+  <solids>
+    <box lunit="mm" name="HDPE0x122e51230" x="300" y="300" z="300"/>
+    <box lunit="mm" name="Scint0x122e51590" x="10" y="10" z="50"/>
+    <box lunit="mm" name="PMT0x122e51900" x="10" y="10" z="10"/>
+    <box lunit="mm" name="NaI0x122e51c80" x="30" y="30" z="30"/>
+    <box lunit="mm" name="World0x122e50570" x="2000" y="2000" z="2000"/>
+  </solids>
+
+  <structure>
+    <volume name="HDPE0x122e51300">
+      <materialref ref="HDPE0x142f26e50"/>
+      <solidref ref="HDPE0x122e51230"/>
+    </volume>
+    <volume name="Scint0x122e51670">
+      <materialref ref="BPlastic0x142f27740"/>
+      <solidref ref="Scint0x122e51590"/>
+    </volume>
+    <volume name="PMT0x122e519d0">
+      <materialref ref="G4_AIR0x142f254d0"/>
+      <solidref ref="PMT0x122e51900"/>
+    </volume>
+    <volume name="NaI0x122e51d40">
+      <materialref ref="G4_SODIUM_IODIDE0x142f28190"/>
+      <solidref ref="NaI0x122e51c80"/>
+    </volume>
+    <volume name="World0x122e50960">
+      <materialref ref="G4_AIR0x142f254d0"/>
+      <solidref ref="World0x122e50570"/>
+      <physvol name="HDPE0x122e514c0">
+        <volumeref ref="HDPE0x122e51300"/>
+      </physvol>
+      <physvol name="Scint0x122e51830">
+        <volumeref ref="Scint0x122e51670"/>
+        <position name="Scint0x122e51830_pos" unit="mm" x="0" y="0" z="225"/>
+      </physvol>
+      <physvol name="PMT0x122e51b90">
+        <volumeref ref="PMT0x122e519d0"/>
+        <position name="PMT0x122e51b90_pos" unit="mm" x="0" y="0" z="255"/>
+      </physvol>
+      <physvol name="NaI0x122e51f00">
+        <volumeref ref="NaI0x122e51d40"/>
+        <position name="NaI0x122e51f00_pos" unit="mm" x="0" y="30" z="225"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="World0x122e50960"/>
+  </setup>
+
+</gdml>

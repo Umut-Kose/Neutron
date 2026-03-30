@@ -1,21 +1,20 @@
-#pragma once
-#include <G4VUserPrimaryGeneratorAction.hh>
-#include <vector>
-#include <string>
-class G4GeneralParticleSource;
-class G4Event;
+#ifndef PrimaryGeneratorAction_h
+#define PrimaryGeneratorAction_h 1
 
+#include "G4VUserPrimaryGeneratorAction.hh"
+#include "globals.hh"
+
+class G4GeneralParticleSource;
 
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction {
 public:
-PrimaryGeneratorAction();
-~PrimaryGeneratorAction() override;
-void GeneratePrimaries(G4Event* event) override;
+    PrimaryGeneratorAction();
+    virtual ~PrimaryGeneratorAction();
+
+    virtual void GeneratePrimaries(G4Event*);
+
 private:
-G4GeneralParticleSource* fGPS = nullptr;
-// Generic spectrum
-std::vector<double> fSpectrumEnergies; // MeV
-std::vector<double> fSpectrumCumWeights; // cumulative weights for sampling
-bool LoadSpectrum(const std::string& path);
-double SampleSpectrumEnergy();
+    G4GeneralParticleSource* fParticleSource;
 };
+
+#endif
